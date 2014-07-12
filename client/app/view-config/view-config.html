@@ -1,0 +1,21 @@
+<div class="form-group">
+  <label class="checkbox-inline">
+    <input type="checkbox" class="checkbox" ng-model="vc.showRuby">ルビ
+  </label>
+</div>
+<div class="form-group">
+  <label class="checkbox-inline">
+    <input type="checkbox" class="checkbox" ng-model="vc.showFirstName">名
+  </label>
+  <label class="checkbox-inline" ng-show="vc.showFirstName">
+    <input type="checkbox" class="checkbox" ng-model="vc.invertFirstName">カナ
+  </label>
+</div>
+<div class="form-group">
+  <label class="checkbox-inline">
+    <input type="checkbox" class="checkbox" ng-model="vc.showFamilyName">姓
+  </label>
+  <label class="checkbox-inline" ng-show="vc.showFamilyName">
+    <input type="checkbox" class="checkbox" ng-model="vc.invertFamilyName">カナ
+  </label>
+</div>

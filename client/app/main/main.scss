@@ -28,3 +28,26 @@
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
 }
+
+//Light Green
+body{
+    color:#33691e;
+}
+.table thead tr {
+    th,
+    td {
+        border-color: #7cb342;
+    }
+}
+.table-hover > tbody > tr:hover {
+    > td,
+    > th {
+        background-color: #f1f8e9;
+    }
+}
+.ng-table {
+    th.sortable.sort-desc,
+    th.sortable.sort-asc {
+        background-color: #f1f8e9;
+    }
+}

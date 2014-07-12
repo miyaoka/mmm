@@ -1,0 +1,116 @@
+.power{
+  font-family: 'arial black';
+  font-weight: bold;
+  font-size: 1.8em;
+  /*
+  filter:dropshadow(color=#000000,offX= 0,offY=-1)
+  dropshadow(color=#000000,offX= 1,offY= 0)
+  dropshadow(color=#000000,offX= 0,offY= 1)
+  dropshadow(color=#000000,offX=-1,offY= 0);
+
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 1px;
+
+  text-shadow: black 1px 1px 0px, black -1px 1px 0px,
+               black 1px -1px 0px, black -1px -1px 0px;
+*/
+  /* WebKit (Safari/Chrome) Only */
+  -webkit-text-stroke: 1px rgba(0,0,0,.125);
+
+  /* If we weren't using text-shadow, we'd set a fallback color
+     and use this to set color instead
+    -webkit-text-fill-color: white; */
+
+  color: #999;
+
+  text-shadow:
+    0px 0px 4px #000,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #333,
+    1px -1px 0 #333,
+   -1px  1px 0 #333,
+    1px  1px 0 #333;
+
+
+}
+.rank-SSS,
+.rank-SS{
+  color: #ffc;
+  -webkit-text-stroke-color: #b60;
+}
+.rank-S{
+  color: #ffff66;
+  color: #fff;
+  -webkit-text-stroke-color: #660;
+}
+.rank-A{
+  color: #ff9e42;
+  color: #ff6725;
+//  color: #ff4705;
+}
+.rank-B{
+  color: #f4d142;
+  color: #ffee00;
+}
+.rank-C{
+  color: #7fdc00;
+  color: #5bdd94;
+  color: #a6d35e;
+  color: #8cda00;
+  color: #8cea00;
+}
+.rank-D{
+  color: #00ccfd;
+//  color: #6dc;
+}
+.rank-E{
+  color: #00adf2;
+  color: #0099f2;
+//  color: #3c9;
+}
+.rank-F{
+  color: #c97efa;
+  color: #a97eda;
+}
+.rank-G{
+  color: #8a9484;
+}
+.table tbody tr td {
+  padding: 0px .5em;
+}
+.person-name{
+  font-size: 1.6em;
+  display: inline-block;
+  .rt {
+    line-height: 1.2em;
+    font-size: .5em;
+    color:#bcb;
+  }
+  .rb {
+    line-height: 1.2em;
+    letter-spacing: -0.05em;
+  }
+}
+.first-name{
+  margin-right: 0.5em;
+}
+.family-name {
+//.first-name{
+//  color: #999;
+//  font-size: 1.2em;
+  .rt {
+//    color:#bbb;
+  }
+}
+
+.sliderExample {
+  padding: 1em;
+  background-color: #f5f5f5;
+  border: 4px solid #f0f0f0;
+}
+
+.skill-detail{
+  color: #bcb;
+  font-size: .8em;
+}

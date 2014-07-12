@@ -5,11 +5,17 @@ angular.module('mmmApp', [
   'ngResource',
   'ngSanitize',
   'ui.bootstrap',
-  'ui.router'
+  'ui.router',
+  'ngTable',
+  'ngDialog',
+  'rzModule'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
-  });
+  })
+  .run(['$templateCache', function ($templateCache) {
+    $templateCache.put('ng-table/pager.html', '');
+  }]);

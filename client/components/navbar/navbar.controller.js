@@ -5,6 +5,9 @@ angular.module('mmmApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },{
+      'title': 'workers',
+      'link': '/workers'
     }];
 
     $scope.isCollapsed = true;
