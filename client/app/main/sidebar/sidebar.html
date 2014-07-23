@@ -1,0 +1,63 @@
+<div ng-controller="SidebarCtrl">
+<div class="scrollable sidebar-scrollable">
+
+<div class="section">
+  <div class="container">
+  <h3>
+    {{ct | date: 'yyyy年MM月'}}
+  </h3>
+
+  <rzslider
+    rz-slider-floor="yearSlider.floor"
+    rz-slider-ceil="yearSlider.ceil"
+    rz-slider-step="{{yearSlider.step}}"
+    rz-slider-model="yearSlider.ym"
+    rz-slider-translate="yearSlider.translate"
+    ></rzslider>
+  </div>
+</div>
+
+
+
+
+<div class="scrollable-content">
+
+
+  <h1 class="app-name">MMM</h1>
+
+
+
+  <div class="list-group" toggle="off" bubble target="mainSidebar">
+    <a class="list-group-item" href="/"><i class="fa fa-home fa-2x"></i> ホーム <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="/workers"><i class="fa fa-users fa-2x"></i> Worker一覧 <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="/workers/0"><i class="fa fa-users fa-2x"></i> Worker[0] <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="#/toggle">Toggle <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="#/tabs">Tabs <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="#/accordion">Accordion <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="#/overlay">Overlay <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="#/forms">Forms <i class="fa fa-chevron-right pull-right"></i></a>
+    <a class="list-group-item" href="#/carousel">Carousel <i class="fa fa-chevron-right pull-right"></i></a>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <h4>workers</h4>
+          <a class="btn btn-primary" ng-click="reset()">再生成</a>
+        </div>
+        <div class="col-xs-8">
+          <h4>お表示</h4>
+          <view-config></view-config>
+        </div>
+      </div><!--/row-->
+    </div><!--/container-->
+
+
+  </div><!--/section-->
+
+
+</div><!--/scrollable-content-->
+
+</div><!--/scrollable-->
+</div><!--/ctrl-->

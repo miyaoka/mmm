@@ -5,6 +5,7 @@ angular.module('mmmApp')
     $stateProvider
       .state('main.home', {
         url: '/',
-        templateUrl: 'app/main/home/home.html'
+        templateUrl: 'app/main/home/home.html',
+        controller: 'HomeCtrl'
       });
   });

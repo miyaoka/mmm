@@ -30,8 +30,7 @@ angular.module('mmmApp', [
       console.log('scs');
       CaptureService.resetAll();
     });
-          console.log('run');
-      CaptureService.resetAll();
+
     /*
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
       console.log('scsuc');
