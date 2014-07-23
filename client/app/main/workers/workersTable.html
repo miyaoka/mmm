@@ -1,14 +1,5 @@
 <div ng-controller="WorkersTableCtrl">
 
-<rzslider
-  rz-slider-floor="pages.floor"
-  rz-slider-ceil="pages.ceil"
-  rz-slider-model="pages.current"
-  rz-slider-step="{{pages.step}}"
-  rz-slider-precision="{{pages.precision}}"
-  rz-slider-translate="pages.translate"
-></rzslider>
-
 <table ng-table="workers" class="table table-hover" ng-show="0 < $data.length">
   <tr ng-repeat="item in $data" ng-click="onSelect(item)">
     <td data-title="'id'" sortable="'id'">{{item.id}}</td>

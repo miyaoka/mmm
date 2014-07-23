@@ -10,7 +10,7 @@ angular.module('mmmApp')
         count: 20         // count per page
       },
       {
-        counts: [10, 20, 50, 100], // 1ページあたりの表示件数（空配列で非表示）
+        counts: [],//[10, 20, 50, 100], // 1ページあたりの表示件数（空配列で非表示）
         getData: function($defer, params) {
           params.total(_items.length);
           _items = (params.filter() ?

@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('mmmApp')
-  .controller('WorkersTableCtrl', function ($scope, $window, Table, CurrentTime, Workers) {
+  .controller('WorkersTableCtrl', function ($scope, $state, $window, $location, Table, CurrentTime, Workers) {
 
     $scope.workers = new Table({
       sorting: {
         id: 'desc'
-      }
+      },
+      count: 100
     });
     $scope.pages = {
       floor: 1,
@@ -15,6 +16,11 @@ angular.module('mmmApp')
       translate : function(value){
         return isNaN(value) ? '' : 'P' + Math.floor(value);
       }
+    };
+    $scope.onSelect = function(item){
+      console.log(item.id);
+      $state.go('main.workersDetail', {id: item.id});
+//      $location.path('/workers/' + item.id);
     };
 
     function updatePager(){
@@ -44,10 +50,13 @@ angular.module('mmmApp')
     });
 
     //workers連想配列データを監視してリストを入れ直す
-    $scope.$watch(function(){
-      return Workers.data;
-    }, function(){
+    function initTable(){
       $scope.workers.setItems(Workers.list);
       updatePager();
-    });
+    }
+    initTable();
+
+    $scope.$watch(function(){
+      return Workers.data;
+    }, initTable);
   });

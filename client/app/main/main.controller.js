@@ -1,22 +1,59 @@
 'use strict';
 
 angular.module('mmmApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($rootScope, $scope, CaptureService) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+/*
+  $rootScope.$on("$stateChangeStart", function(){
+    console.log('stateChangeStart');
+    $rootScope.loading = true;
+  });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+  $rootScope.$on("$stateChangeSuccess", function(){
+    console.log('stateChangeSuccess');
+    $rootScope.loading = false;
+  });
+*/
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
+
+
+
+  var scrollItems = [];
+
+  for (var i=1; i<=100; i++) {
+    scrollItems.push("Item " + i);
+  }
+
+  $scope.scrollItems = scrollItems;
+  $scope.invoice = {payed: true};
+
+  $scope.userAgent =  navigator.userAgent;
+  $scope.chatUsers = [
+    { name: "Carlos  Flowers", online: true },
+    { name: "Byron Taylor", online: true },
+    { name: "Jana  Terry", online: true },
+    { name: "Darryl  Stone", online: true },
+    { name: "Fannie  Carlson", online: true },
+    { name: "Holly Nguyen", online: true },
+    { name: "Bill  Chavez", online: true },
+    { name: "Veronica  Maxwell", online: true },
+    { name: "Jessica Webster", online: true },
+    { name: "Jackie  Barton", online: true },
+    { name: "Crystal Drake", online: false },
+    { name: "Milton  Dean", online: false },
+    { name: "Joann Johnston", online: false },
+    { name: "Cora  Vaughn", online: false },
+    { name: "Nina  Briggs", online: false },
+    { name: "Casey Turner", online: false },
+    { name: "Jimmie  Wilson", online: false },
+    { name: "Nathaniel Steele", online: false },
+    { name: "Aubrey  Cole", online: false },
+    { name: "Donnie  Summers", online: false },
+    { name: "Kate  Myers", online: false },
+    { name: "Priscilla Hawkins", online: false },
+    { name: "Joe Barker", online: false },
+    { name: "Lee Norman", online: false },
+    { name: "Ebony Rice", online: false }
+  ];
+
   });

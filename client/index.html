@@ -17,12 +17,15 @@
       <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
       <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
       <!-- endbower -->
-
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/main/demo/demo.css">
       <link rel="stylesheet" href="components/miyaoka-icon/css/miyaoka-icon-embedded.css">
+      <link rel="stylesheet" href="components/mobile-angular-ui/css/mobile-angular-ui-base.css">
+      <link rel="stylesheet" href="components/mobile-angular-ui/css/mobile-angular-ui-desktop.css">
+      <link rel="stylesheet" href="components/mobile-angular-ui/css/mobile-angular-ui-hover.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -33,7 +36,7 @@
 
     <!-- Add your site or application content here -->
 
-    <div ui-view=""></div>
+    <ui-view></ui-view>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 
@@ -57,19 +60,25 @@
       <script src="bower_components/ng-table/ng-table.js"></script>
       <script src="bower_components/ngDialog/js/ngDialog.js"></script>
       <script src="bower_components/angularjs-slider/rzslider.js"></script>
+      <script src="bower_components/fastclick/lib/fastclick.js"></script>
+      <script src="bower_components/overthrow/dist/overthrow.js"></script>
+      <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/main/demo/demo.js"></script>
+          <script src="app/main/home/home.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/main/workers/worker.controller.js"></script>
+          <script src="app/main/workers/workers.controller.js"></script>
+          <script src="app/main/workers/workers.js"></script>
+          <script src="app/main/workers/workersTable.controller.js"></script>
           <script src="app/person-name/person-name.directive.js"></script>
           <script src="app/view-config/view-config.directive.js"></script>
-          <script src="app/workers/workers.controller.js"></script>
-          <script src="app/workers/workers.js"></script>
-          <script src="app/workers/workersTable.controller.js"></script>
           <script src="components/filters/hexcolor/hexcolor.filter.js"></script>
           <script src="components/filters/rank/rank.filter.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>

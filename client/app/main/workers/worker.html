@@ -1,0 +1,43 @@
+<div content-for="title">
+  <span>Worker詳細</span>
+</div>
+<div class="btn-group pull-right" content-for="navbarAction">
+  <div ng-click="toggle('rightSidebar')" class="btn btn-navbar">
+    <i class="fa fa-comment"></i> Info
+  </div>
+</div>
+
+
+<div class="scrollable">
+  <div class="scrollable-content section">
+<a href="/workers">back</a>
+
+
+<table ng-show="item">
+  <tr>
+    <td>ID</td>
+    <td>{{item.id}}</td>
+  </tr>
+  <tr>
+    <td>age</td>
+    <td>{{item.age}}</td>
+  </tr>
+  <tr>
+    <td>face</td>
+    <td>
+      <span class="fa-stack" style="border-radius: 1em; font-size:1.2em; background-color:{{item.bgColor | hexcolor}}">
+        <i class="fa-stack-2x micon micon-face-20x20" style="color:#{{item.skinColor}}"></i>
+        <i class="fa-stack-2x micon micon-eye-2x4" style="color:{{item.eyeColor | hexcolor}}"></i>
+        <i class="fa-stack-2x micon micon-hair-{{item.hairSize}}" style="color:{{item.hairColor | hexcolor}}"></i>
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td>名前</td>
+    <td>
+      {{item.firstName.name}} {{item.familyName.name}}
+    </td>
+  </tr>
+</table>
+</div>
+</div>

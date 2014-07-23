@@ -1,0 +1,35 @@
+<div content-for="title">
+  <span>Workers list</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+
+    <div class="section">
+      <div class="col-sm-8">
+        <h3>
+          {{ct | date: 'yyyy年MM月'}}
+        </h3>
+        <rzslider
+          rz-slider-floor="yearSlider.floor"
+          rz-slider-ceil="yearSlider.ceil"
+          rz-slider-step="{{yearSlider.step}}"
+          rz-slider-model="yearSlider.ym"
+          rz-slider-translate="yearSlider.translate"
+          ></rzslider>
+      </div>
+      <div class="col-sm-2">
+        <h4>workers</h4>
+        <a class="btn btn-primary" ng-click="reset()">再生成</a>
+      </div>
+      <div class="col-sm-2">
+        <h4>お表示</h4>
+        <view-config></view-config>
+      </div>
+    </div>
+    <div class="section">
+      <div ng-include="'app/main/workers/workersTable.html'"></div>
+    </div>
+
+  </div>
+</div>
