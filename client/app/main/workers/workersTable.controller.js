@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mmmApp')
-  .controller('WorkersTableCtrl', function ($scope, $state, $window, $location, Table, CurrentTime, Workers) {
+  .controller('WorkersTableCtrl', function ($scope, $rootScope, $state, $window, $location, Table, CurrentTime, Workers) {
 
     $scope.workers = new Table({
       sorting: {
@@ -19,7 +19,8 @@ angular.module('mmmApp')
     };
     $scope.onSelect = function(item){
       console.log(item.id);
-      $state.go('main.workersDetail', {id: item.id});
+      $rootScope.selectitem = item;
+//      $state.go('main.workersDetail', {id: item.id});
 //      $location.path('/workers/' + item.id);
     };
 

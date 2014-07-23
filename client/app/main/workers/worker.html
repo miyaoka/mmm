@@ -1,27 +1,29 @@
+<div class="scrollable">
+
 <div content-for="title">
   <span>Worker詳細</span>
 </div>
-<div class="btn-group pull-right" content-for="navbarAction">
-  <div ng-click="toggle('rightSidebar')" class="btn btn-navbar">
-    <i class="fa fa-comment"></i> Info
+
+<div content-for="nav-top-left">
+  <div class="btn btn-navbar sidebar-toggle">
+    <a href="/workers"><i class="fa fa-chevron-left"></i> 戻る</a>
   </div>
 </div>
 
-
-<div class="scrollable">
   <div class="scrollable-content section">
-<a href="/workers">back</a>
+    <div class="container">
 
 
-<table ng-show="item">
+<table ng-show="item" class="table table-bordered info">
+  <tbody>
+
   <tr>
-    <td>ID</td>
-    <td>{{item.id}}</td>
+    <td>名前</td>
+    <td>
+      {{item.firstName.name}} {{item.familyName.name}}
+    </td>
   </tr>
-  <tr>
-    <td>age</td>
-    <td>{{item.age}}</td>
-  </tr>
+
   <tr>
     <td>face</td>
     <td>
@@ -32,12 +34,23 @@
       </span>
     </td>
   </tr>
+
   <tr>
-    <td>名前</td>
-    <td>
-      {{item.firstName.name}} {{item.familyName.name}}
-    </td>
+    <td>ID</td>
+    <td>{{item.id}}</td>
   </tr>
+  <tr>
+    <td>年齢</td>
+    <td>{{item.age}}</td>
+  </tr>
+  </tbody>
 </table>
-</div>
-</div>
+
+
+    </div><!--/container-->
+  </div><!--/scrollable content-->
+</div><!--/scrollable-->
+
+
+
+

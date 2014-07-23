@@ -114,3 +114,18 @@
   color: #bcb;
   font-size: .8em;
 }
+
+
+
+table.info {
+  margin: 12px 0px;
+  tbody td {
+    padding: 4px 12px;
+  }
+  tbody > tr > td:first-child {
+    width: 25%;
+    background-color: #f6f6f0;
+    font-weight: bold;
+    text-align: right;
+  }
+}
