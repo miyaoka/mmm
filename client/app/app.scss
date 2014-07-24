@@ -1,8 +1,12 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'font-awesome/scss/font-awesome';
+//@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+//@import 'font-awesome/scss/font-awesome';
+
+@import '../bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.css';
+@import '../bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.css';
+@import '../bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css';
 
 /**
  * App-wide Styles
@@ -18,10 +22,11 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-//      width:100%;
-        max-width: 730px;
+      width:100%;
+//        max-width: 730px;
     }
 }
+
 
 // Component styles are injected through grunt
 // injector
@@ -31,3 +36,4 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'slider.scss';
 @import 'view-config/view-config.scss';
 // endinjector
+

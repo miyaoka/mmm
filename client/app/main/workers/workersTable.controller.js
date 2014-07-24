@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('mmmApp')
-  .controller('WorkersTableCtrl', function ($scope, $rootScope, $state, $window, $location, Table, CurrentTime, Workers) {
+  .controller('WorkersTableCtrl', function ($scope, $rootScope, $state, $window, $location, ViewConfig, Table, CurrentTime, Workers) {
 
+    $scope.vc = ViewConfig;
     $scope.workers = new Table({
       sorting: {
         id: 'desc'

@@ -51,3 +51,13 @@ body{
         background-color: #f1f8e9;
     }
 }
+
+
+@media (min-width: 992px) {
+  .sidebar-toggle {
+    display: inline-block;
+  }
+  .navbar-brand-center {
+    text-align: center;
+  }
+}
