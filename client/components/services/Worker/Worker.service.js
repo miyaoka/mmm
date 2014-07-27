@@ -45,7 +45,7 @@ angular.module('mmmApp')
       var endDate = new Date(CurrentTime.getFullYear() - age + 1, 1, 1);
       this.birth = new Date(
         startDate.getTime() +
-        ( endDate.getTime() - startDate.getTime() ) * 0//Math.random()
+        ( endDate.getTime() - startDate.getTime() ) * Math.random()
       );
       this.id = _currentId++;
 
@@ -82,7 +82,8 @@ angular.module('mmmApp')
         return this.gender == 'male' ? 0x33aaff : 0xff99cc;
       },
       get age(){
-        return CurrentTime.getFullYear() - this.birth.getFullYear();
+//        return CurrentTime.getFullYear() - this.birth.getFullYear();
+        return (CurrentTime.getTime() - this.birth.getTime()) / 1000 / 86400 / 365;
       },
       set age(num){
         this.skill.age = num;

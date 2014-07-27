@@ -9,14 +9,17 @@ angular.module('mmmApp')
     var turnPerYear = 12;
 
     $scope.yearSlider = {
-      floor: 2000 * turnPerYear,
+      floor: 2010 * turnPerYear,
       ceil: 2060 * turnPerYear,
-      ym: 2014 * turnPerYear,
+      ym: ym(),
       step: turnPerYear,
       translate : function(value){
         return Math.floor(value / turnPerYear) + '年';
       }
     };
+    function ym(){
+      return CurrentTime.getFullYear() * turnPerYear + CurrentTime.getMonth();
+    }
     $scope.$watch(function(){
       return $scope.yearSlider.ym;
     }, function(val){
@@ -27,6 +30,15 @@ angular.module('mmmApp')
       CurrentTime.setTime(d.getTime());
     });
 
+    $scope.$watch(function(){
+      return CurrentTime.getTime();
+    }, function(val){
+      $scope.yearSlider.ym = ym();
+    });
+
+    $scope.nextMonth = function(){
+      CurrentTime.nextMonth();
+    };
 
 
 

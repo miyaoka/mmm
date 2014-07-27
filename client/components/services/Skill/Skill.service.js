@@ -28,6 +28,12 @@ angular.module('mmmApp')
       this.peakEnd = this.peakStart + this.peakDuration;
       this.power = nrMinMax(powerMean, powerSd, .1, 1);
 
+      this.peaks = [
+        {x:10, y:0},
+        {x:this.peakStart, y:1},
+        {x:this.peakEnd, y:0.5}
+      ];
+
     };
     //private function
     function nrMinMax(mu, sigma, min, max){
@@ -53,6 +59,13 @@ angular.module('mmmApp')
 
       return x1 * c;
     };
+    function cosineInterpolate(y1, y2, mu)
+    {
+       var mu2;
+
+       mu2 = (1 - Math.cos(mu * Math.PI) ) / 2;
+       return (y1 * (1 - mu2) + y2 * mu2);
+    }
     // Define the "instance" methods using the prototype
     // and standard prototypal inheritance.
     Skill.prototype = {
@@ -85,6 +98,28 @@ angular.module('mmmApp')
         return this.currentRate * this.power;
       },
       get currentRate(){
+        var age = this.age;
+        var val = 0.5;
+        for(var i=0; i < this.peaks.length; i++){
+          var peak = this.peaks[i];
+          if(age > peak.x){
+            continue;
+          }
+          if(i == 0){
+            val = 0;
+            break;
+          }
+
+          var lastpeak = this.peaks[i-1];
+          var mu = (age - lastpeak.x) / (peak.x - lastpeak.x);
+          val = cosineInterpolate(lastpeak.y, peak.y, mu);
+          break;
+
+        }
+
+        return val;
+      },
+      get currentRate0(){
         var age = this.age;
         var val;
         if(age < 16){//ageStart){

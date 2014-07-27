@@ -6,6 +6,10 @@ angular.module('mmmApp')
     // ...
 
     var date = new Date();
+    date.nextMonth = function() {
+      this.setMonth(this.getMonth()+1);
+      // body...
+    };
 
     // Public API here
     return date;
