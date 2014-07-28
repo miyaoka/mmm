@@ -18,8 +18,8 @@
       <person-name item="item.familyName" class="person-name family-name"></person-name>
     </td>
     <td data-title="'age'" sortable="'age'" class="text-left">{{item.age | number:0}}歳</td>
-    <td data-title="'peakStart'" sortable="'peakStart'" class="text-left">{{item.skills[0].peakStart | number:1}}歳</td>
-    <td data-title="'peakEnd'" sortable="'peakEnd'" class="text-left">{{item.skills[0].peakEnd | number:1}}歳</td>
+    <td data-title="'peakStart'" sortable="'skills[0].peakStart'" class="text-left">{{item.skills[0].peakStart | number:1}}歳</td>
+    <td data-title="'peakEnd'" sortable="'skills[0].peakEnd'" class="text-left">{{item.skills[0].peakEnd | number:1}}歳</td>
 
     <td data-title="'skill0'" sortable="'skills[0].currentPower'">
       <span class="power rank-{{item.skills[0].currentPower | rank}}">

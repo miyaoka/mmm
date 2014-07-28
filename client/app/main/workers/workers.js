@@ -8,9 +8,9 @@ angular.module('mmmApp')
         templateUrl: 'app/main/workers/workers.html',
         controller: 'WorkersCtrl'
       })
-      .state('main.workersDetail', {
-        url: '/workers/:id',
-        templateUrl: 'app/main/workers/worker.html',
-        controller: 'WorkerCtrl'
-      });
+        .state('main.workers.detail', {
+          url: '/:id',
+          templateUrl: 'app/main/workers/worker.html',
+          controller: 'WorkerCtrl'
+        });
   });

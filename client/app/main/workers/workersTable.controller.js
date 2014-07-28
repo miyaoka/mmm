@@ -14,6 +14,8 @@ angular.module('mmmApp')
     $scope.onSelect = function(item){
       console.log(item.id);
       $rootScope.selectitem = item;
+//      $rootScope.templateUrl = '/app/main/workers/' + item.id;
+      $state.go('main.workers.detail', {id: item.id});
 //      $state.go('main.workersDetail', {id: item.id});
 //      $location.path('/workers/' + item.id);
     };

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mmmApp')
-  .controller('WorkerCtrl', function ($scope, $stateParams, Worker, Table, CurrentTime, Workers, PersonNames, ViewConfig) {
+  .controller('WorkerCtrl', function ($scope, $stateParams, $state, Worker, Table, CurrentTime, Workers, PersonNames, ViewConfig) {
 
 
     //workers連想配列データを監視してリストを入れ直す
@@ -17,5 +17,9 @@ angular.module('mmmApp')
       return Workers.data;
     }, init);
 
+    $scope.back = function(){
+      $state.go('^');
+
+    }
 
   });

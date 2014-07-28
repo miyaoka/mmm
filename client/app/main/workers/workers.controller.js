@@ -6,6 +6,7 @@ angular.module('mmmApp')
 
     $scope.clearSelect = function(){
       delete $rootScope.selectitem;
+      delete $rootScope.templateUrl;
     };
 
 
