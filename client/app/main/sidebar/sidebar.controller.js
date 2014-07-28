@@ -38,7 +38,6 @@ angular.module('mmmApp')
 
     $scope.nextMonth = function(){
       Game.nextMonth();
-      $state.go('main.home');
     };
 
 

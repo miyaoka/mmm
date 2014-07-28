@@ -70,6 +70,7 @@ angular.module('mmmApp')
       this.faceW = Math.ceil(Math.random()*4) * 5;
       this.faceH = Math.ceil(Math.random()*4) * 5;
 //      this.bgColor = Math.random()*0xffffff;
+      this.isAlive = true;
     };
 
 

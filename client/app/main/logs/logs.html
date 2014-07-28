@@ -1,0 +1,19 @@
+<div class="scrollable">
+
+<div content-for="title">
+  <span>イベントログ</span>
+</div>
+
+
+
+
+  <div class="scrollable-content section">
+    <div class="container">
+
+<div ng-repeat="item in logs">
+  <p>{{item.date | date: 'yyyy/MM'}}: {{item.msg}}</p>
+</div>
+
+    </div><!--/container-->
+  </div><!--/scrollable content-->
+</div><!--/scrollable-->

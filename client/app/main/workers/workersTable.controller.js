@@ -6,7 +6,7 @@ angular.module('mmmApp')
     $scope.vc = ViewConfig;
     $scope.workers = new Table({
       sorting: {
-        id: 'desc'
+        salary: 'desc'
       },
       count: 100
     });

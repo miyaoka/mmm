@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mmmApp')
-  .factory('Game', function (PersonNames, Workers, Worker, CurrentTime) {
+  .factory('Game', function ($state, PersonNames, Workers, Worker, CurrentTime, Logs, Log) {
 
     var addWorker = function(age, count){
       var langs = 'en de fr it es ja'.split(' ');
@@ -27,12 +27,32 @@ angular.module('mmmApp')
       init: function (){
         console.log('initgame');
         PersonNames.load().then(function(){
-          addWorker(18, 10);
+          addWorker(16, 100);
         });
 
       },
       nextMonth: function(){
+        var ws = Workers.list;
+
+        ws.forEach(function(w){
+          if(!w.isAlive){
+            return;
+          }
+          if(Math.random() < .05){
+            w.isAlive = false;
+            Logs.push(new Log(
+              ['[', w.id, '] ', w.firstName.kana, ' ', w.familyName.kana, ' is dead.'].join('')
+            ));
+          }
+        });
+
         CurrentTime.nextMonth();
+
+        if(CurrentTime.getMonth() == 0){
+          Workers.clearDead();
+          addWorker(16,100)
+        }
+
       }
     };
   });

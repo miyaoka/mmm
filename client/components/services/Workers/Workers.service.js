@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mmmApp')
-  .factory('Workers', function ($rootScope) {
+  .factory('Workers', function () {
 
     var _workers = {};
     var _values = [];
@@ -40,6 +40,14 @@ angular.module('mmmApp')
       removeAll: function(){
         _workers = {};
         valuesUpdate();
+      },
+      clearDead: function(){
+        for (var id in _workers) {
+          var worker = _workers[id];
+          if(!worker.isAlive){
+            delete _workers[id];
+          }
+        }
       }
     }
     return Workers;
