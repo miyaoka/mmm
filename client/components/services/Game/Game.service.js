@@ -3,7 +3,7 @@
 angular.module('mmmApp')
   .factory('Game', function ($state, PersonNames, Workers, Worker, CurrentTime, Logs, Log) {
 
-    var addWorker = function(age, count){
+    var addWorkers = function(age, count){
       var langs = 'en de fr it es ja'.split(' ');
       var workers = [];
       for(var i = 0; i < count; i++){
@@ -20,14 +20,20 @@ angular.module('mmmApp')
         w.gender = gender;
         Workers.add(w);
       }
-    }
+    };
+    var addNewGen = function(){
+      addWorkers(18, 20);
+    };
 
     // Public API here
     return {
       init: function (){
         console.log('initgame');
         PersonNames.load().then(function(){
-          addWorker(16, 100);
+          var age = 18;
+          for(var i = 20; i > 0; i-=2){
+            addWorkers(age++, i);
+          }
         });
 
       },
@@ -43,7 +49,7 @@ angular.module('mmmApp')
           if(w.died){
             return;
           }
-          if(Math.random() < .05){
+          if(Math.random() < .02){
             w.died = now;
             Logs.push(new Log(
               ['[', w.id, '] ', w.firstName.kana, ' ', w.familyName.kana, ' is dead.'].join('')
@@ -54,7 +60,7 @@ angular.module('mmmApp')
         CurrentTime.nextMonth();
 
         if(CurrentTime.getMonth() == 0){
-          addWorker(16,100)
+          addNewGen();
         }
 
       }

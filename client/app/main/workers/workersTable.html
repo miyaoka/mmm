@@ -22,9 +22,9 @@
     <td data-title="'姓'" sortable="'familyName.kana'" ng-show="!vc.showFirstName && vc.showFamilyName">
       <person-name item="item.familyName" class="person-name family-name"></person-name>
     </td>
+    <td data-title="'born'" sortable="'born'">{{item.born | date:'yyyy/MM'}}</td>
+    <td data-title="'died'" sortable="'died'">{{item.died | date:'yyyy/MM'}}</td>
     <td data-title="'age'" sortable="'age'" class="text-left">{{item.age | floor | number:0 }}歳</td>
-    <td data-title="'peakStart'" sortable="'skills[0].peakStart'" class="text-left">{{item.skills[0].peakStart | number:1}}歳</td>
-    <td data-title="'peakEnd'" sortable="'skills[0].peakEnd'" class="text-left">{{item.skills[0].peakEnd | number:1}}歳</td>
 
     <td data-title="'skill0'" sortable="'skills[0].currentPower'">
       <span class="power rank-{{item.skills[0].currentPower | rank}}">
@@ -59,8 +59,6 @@
     </td>
 
     <td data-title="'salary'" sortable="'salary'" class="text-right">{{item.salary * 5 | number:0}}万円</td>
-    <td data-title="'born'" sortable="'born'">{{item.born | date:'yyyy/MM/dd'}}</td>
-    <td data-title="'died'" sortable="'died'">{{item.died | date:'yyyy/MM/dd'}}</td>
   </tr>
 </table>
 
