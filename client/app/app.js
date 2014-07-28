@@ -17,7 +17,7 @@ angular.module('mmmApp', [
 
     $locationProvider.html5Mode(true);
   })
-  .run(function ($templateCache, $rootScope, CaptureService, PersonNames, Workers, Worker) {
+  .run(function ($templateCache, $rootScope, CaptureService, Game) {
     $templateCache.put('ng-table/pager.html2', '');
 
 /*
@@ -53,36 +53,7 @@ angular.module('mmmApp', [
     });
 */
 
-    var reset = function(){
-      Workers.removeAll();
-
-      add();
-    }
-
-    var add = function(){
-      var langs = 'en de fr it es ja'.split(' ');
-      var workers = [];
-      for(var age = -15; age < 16; age++){
-        for(var i = 0; i < 10; i++){
-          var lang = langs[Math.floor(Math.random()*langs.length)];
-          var lang2 = langs[Math.floor(Math.random()*langs.length)];
-//          lang = lang2 = 'ja';
-          var gender = PersonNames.genders[Math.floor(Math.random()*2)];
-          var familyName = PersonNames.getName('family');
-          var firstName = PersonNames.getName(gender, lang2);
-
-          var w = new Worker(age);
-          w.firstName = firstName;
-          w.familyName = familyName;
-          w.gender = gender;
-          Workers.add(w);
-        }
-      }
-    }
-
-    PersonNames.load().then(function(){
-      reset();
-    });
+    Game.init();
 
 
   });

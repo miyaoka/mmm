@@ -41,11 +41,11 @@ angular.module('mmmApp')
 
     // Define the constructor function.
     function Worker(age){
-      var startDate = new Date(CurrentTime.getFullYear() - age, 1, 1);
-      var endDate = new Date(CurrentTime.getFullYear() - age + 1, 1, 1);
+      var startDate = new Date(CurrentTime.getFullYear() - age, 0, 1);
+      var endDate = new Date(CurrentTime.getFullYear() - age + 1, 0, 1);
       this.birth = new Date(
         startDate.getTime() +
-        ( endDate.getTime() - startDate.getTime() ) * Math.random()
+        ( endDate.getTime() - startDate.getTime() ) * 0 //Math.random()
       );
       this.id = _currentId++;
 

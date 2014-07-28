@@ -35,6 +35,6 @@ angular.module('mmmApp')
     initTable();
 
     $scope.$watch(function(){
-      return Workers.data;
+      return Workers.list;
     }, initTable);
   });
