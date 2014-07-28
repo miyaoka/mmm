@@ -40,6 +40,8 @@ angular.module('mmmApp')
       nextMonth: function(){
         var ws = Workers.list;
 
+        //年末に死没者をクリア
+        //（12月の死亡者をクリアしてしまうと確認できないので、12月の判定前に実行）
         if(CurrentTime.getMonth() == 11){
           Workers.clearDead();
         }
@@ -59,6 +61,7 @@ angular.module('mmmApp')
 
         CurrentTime.nextMonth();
 
+        //年初に新世代を追加
         if(CurrentTime.getMonth() == 0){
           addNewGen();
         }
