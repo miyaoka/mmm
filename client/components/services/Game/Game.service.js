@@ -34,12 +34,17 @@ angular.module('mmmApp')
       nextMonth: function(){
         var ws = Workers.list;
 
+        if(CurrentTime.getMonth() == 11){
+          Workers.clearDead();
+        }
+
+        var now = CurrentTime.clone();
         ws.forEach(function(w){
-          if(!w.isAlive){
+          if(w.died){
             return;
           }
           if(Math.random() < .05){
-            w.isAlive = false;
+            w.died = now;
             Logs.push(new Log(
               ['[', w.id, '] ', w.firstName.kana, ' ', w.familyName.kana, ' is dead.'].join('')
             ));
@@ -49,7 +54,6 @@ angular.module('mmmApp')
         CurrentTime.nextMonth();
 
         if(CurrentTime.getMonth() == 0){
-          Workers.clearDead();
           addWorker(16,100)
         }
 

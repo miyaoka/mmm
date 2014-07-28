@@ -44,7 +44,7 @@ angular.module('mmmApp')
       clearDead: function(){
         for (var id in _workers) {
           var worker = _workers[id];
-          if(!worker.isAlive){
+          if(worker.died){
             delete _workers[id];
           }
         }

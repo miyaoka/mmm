@@ -43,10 +43,11 @@ angular.module('mmmApp')
     function Worker(age){
       var startDate = new Date(CurrentTime.getFullYear() - age, 0, 1);
       var endDate = new Date(CurrentTime.getFullYear() - age + 1, 0, 1);
-      this.birth = new Date(
+      this.born = new Date(
         startDate.getTime() +
         ( endDate.getTime() - startDate.getTime() ) * 0 //Math.random()
       );
+      this.died = null;
       this.id = _currentId++;
 
       //人種遺伝子を6bitで定義
@@ -84,7 +85,9 @@ angular.module('mmmApp')
       },
       get age(){
 //        return CurrentTime.getFullYear() - this.birth.getFullYear();
-        return (CurrentTime.getTime() - this.birth.getTime()) / 1000 / 86400 / 365;
+        return (
+          (this.died ? this.died.getTime() : CurrentTime.getTime()) - this.born.getTime()
+        ) / 1000 / 86400 / 365;
       },
       set age(num){
         this.skill.age = num;

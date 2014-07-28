@@ -2,8 +2,12 @@
 
 <p>全 {{workers.total()}}件</p>
 <table ng-table="workers" class="table table-hover" ng-show="0 < $data.length">
-  <tr ng-repeat="item in $data" ng-click="onSelect(item)" ng-class="{dead: !item.isAlive}">
+  <tr ng-repeat="item in $data" ng-click="onSelect(item)" ng-class="{dead: item.died}">
+    <td data-title="'rank'">{{$index + 1}}</td>
+    <!--
     <td data-title="'id'" sortable="'id'">{{item.id}}</td>
+    -->
+
     <td data-title="'face'">
       <span class="fa-stack" style="border-radius: 1em; font-size:1.2em; background-color:{{item.bgColor | hexcolor}}">
         <i class="fa-stack-2x micon micon-face-20x20" style="color:#{{item.skinColor}}"></i>
@@ -37,37 +41,26 @@
       <span class="power rank-{{item.skills[1].currentPower | rank}}">
         {{item.skills[1].currentPower | rank}}
       </span>
-      <span class="skill-detail">
-        {{item.skills[1].currentPower * 100 | number:0}}
-      </span>
     </td>
     <td data-title="'s2'" sortable="'skills[2].currentPower'">
       <span class="power rank-{{item.skills[2].currentPower | rank}}">
         {{item.skills[2].currentPower | rank}}
-      </span>
-      <span class="skill-detail">
-        {{item.skills[2].currentPower * 100 | number:0}}
       </span>
     </td>
     <td data-title="'s3'" sortable="'skills[3].currentPower'">
       <span class="power rank-{{item.skills[3].currentPower | rank}}">
         {{item.skills[3].currentPower | rank}}
       </span>
-      <span class="skill-detail">
-        {{item.skills[3].currentPower * 100 | number:0}}
-      </span>
     </td>
     <td data-title="'s4'" sortable="'skills[4].currentPower'">
       <span class="power rank-{{item.skills[4].currentPower | rank}}">
         {{item.skills[4].currentPower | rank}}
       </span>
-      <span class="skill-detail">
-        {{item.skills[4].currentPower * 100 | number:0}}
-      </span>
     </td>
 
     <td data-title="'salary'" sortable="'salary'" class="text-right">{{item.salary * 5 | number:0}}万円</td>
-    <td data-title="'birth'" sortable="'birth'">{{item.birth | date:'yyyy/MM/dd'}}</td>
+    <td data-title="'born'" sortable="'born'">{{item.born | date:'yyyy/MM/dd'}}</td>
+    <td data-title="'died'" sortable="'died'">{{item.died | date:'yyyy/MM/dd'}}</td>
   </tr>
 </table>
 
