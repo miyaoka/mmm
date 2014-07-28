@@ -17,7 +17,7 @@
     <td data-title="'姓'" sortable="'familyName.kana'" ng-show="!vc.showFirstName && vc.showFamilyName">
       <person-name item="item.familyName" class="person-name family-name"></person-name>
     </td>
-    <td data-title="'age'" sortable="'age'" class="text-left">{{item.age | number:0}}歳</td>
+    <td data-title="'age'" sortable="'age'" class="text-left">{{item.age | floor | number:0 }}歳</td>
     <td data-title="'peakStart'" sortable="'skills[0].peakStart'" class="text-left">{{item.skills[0].peakStart | number:1}}歳</td>
     <td data-title="'peakEnd'" sortable="'skills[0].peakEnd'" class="text-left">{{item.skills[0].peakEnd | number:1}}歳</td>
 

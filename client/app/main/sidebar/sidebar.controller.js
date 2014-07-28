@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mmmApp')
-  .controller('SidebarCtrl', function ($scope, $window, Worker, Table, CurrentTime, Workers, PersonNames, ViewConfig) {
+  .controller('SidebarCtrl', function ($scope, $window, $state, Worker, Table, CurrentTime, Workers, PersonNames, ViewConfig, Game) {
 
     $scope.vc = ViewConfig;
     $scope.ct = CurrentTime;
@@ -37,7 +37,8 @@ angular.module('mmmApp')
     });
 
     $scope.nextMonth = function(){
-      CurrentTime.nextMonth();
+      Game.nextMonth();
+      $state.go('main.home');
     };
 
 

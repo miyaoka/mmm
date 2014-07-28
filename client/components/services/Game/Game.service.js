@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mmmApp')
-  .factory('Game', function (PersonNames, Workers, Worker) {
+  .factory('Game', function (PersonNames, Workers, Worker, CurrentTime) {
 
     var addWorker = function(age, count){
       var langs = 'en de fr it es ja'.split(' ');
@@ -27,12 +27,12 @@ angular.module('mmmApp')
       init: function (){
         console.log('initgame');
         PersonNames.load().then(function(){
-          addWorker(0, 10);
+          addWorker(18, 10);
         });
 
       },
       nextMonth: function(){
-
+        CurrentTime.nextMonth();
       }
     };
   });
